@@ -209,7 +209,7 @@ export default function Users() {
       <div id="container">
         {/* {users.map((item) => (
           <User email={item.email} username={item.username} />
-        ))} */}
+        ))} */} 
         {
         // Filter Users based on name
         users.filter((item) => (
