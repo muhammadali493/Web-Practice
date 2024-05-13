@@ -3,6 +3,7 @@ import { useState } from "react";
 export default function Game() {
     const [users, setUsers] = useState([]);
     const [createUserBtnEnable, setUserBtnEnable] = useState(false);
+    const [stepBtnDisable, setStepBtnDisable] = useState(true);
     const goForward = (index) => {
         const updatedData = [...users];
         if (updatedData[index].step < 3) {
@@ -42,9 +43,9 @@ export default function Game() {
                     <div style={{ display: "flex", gap: "20px", marginTop: "10px" }}>
                         <div>{JSON.stringify(userItem)}</div>
                         <div style={{ display: "flex", gap: "20px" }}>
-                            <button disabled>Step 1</button>
-                            <button disabled>Step 2</button>
-                            <button disabled>Step 3</button>
+                            <button disabled style={users[index].step===1 ? {backgroundColor: "greenyellow"}: {}}>Step 1 {users[index].step}</button>
+                            <button disabled style={users[index].step===2 ? {backgroundColor: "greenyellow"}: {}}>Step 2 {users[index].step}</button>
+                            <button disabled style={users[index].step===3 ? {backgroundColor: "greenyellow"}: {}}>Step 3 {users[index].step}</button>
                         </div>
                         <div>
                             <button
