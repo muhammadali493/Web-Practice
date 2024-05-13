@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./onlineFeed.css";
-import { User } from "../User";
+import { User } from "./User";
 export default function OnlineFeed() {
   const [users, setUsers] = useState([]);
   const [posts, setPosts] = useState([]);

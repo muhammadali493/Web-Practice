@@ -4,6 +4,6 @@
     background-color: rgb(68, 118, 102);
 }
 .input{
-    padding: 20px;
-    background-color: rgb(70, 215, 217);
+    display: flex;
+    justify-content: space-evenly;
 }
