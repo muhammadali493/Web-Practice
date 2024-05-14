@@ -1,0 +1,11 @@
+.container{
+    display: flex;
+    /* justify-content: space-evenly; */
+    gap: 40px;
+}
+.displayTaskContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 15px;
+}

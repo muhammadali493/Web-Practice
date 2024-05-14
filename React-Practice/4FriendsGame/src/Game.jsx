@@ -11,11 +11,12 @@ export default function Game() {
             
         }
         setUsers(updatedData);
-        if(updatedData[index].step === 3)
-            setUserBtnEnable(false);
-        //If all the users are on step 3    
-        // updatedData.every(item => item.step === 3)
+        // if(updatedData[index].step === 3)
         //     setUserBtnEnable(false);
+        //If all the users are on step 3    
+        if(updatedData.every(item => item.step === 3)){
+            setUserBtnEnable(false);
+        }
         
     };
     const enabledUser = () => { };
@@ -24,14 +25,17 @@ export default function Game() {
             <div>
                 <button
                     onClick={() => {
-                        setUsers((prev) => [
-                            ...prev,
-                            {
-                                userName: users - `${prev.length + 1}`,
-                                step: 1,
-                            },
-                        ]);
-                        setUserBtnEnable(true);
+                        if(users.length <= 3){
+                            setUsers((prev) => [
+                                ...prev,
+                                {
+                                    userName: `users - ${prev.length + 1}`,
+                                    step: 1,
+                                },
+                            ]);
+                            setUserBtnEnable(true); 
+                        }
+                        
                     }}
                     disabled={createUserBtnEnable}
                 >
@@ -59,7 +63,9 @@ export default function Game() {
                         </div>
                     </div>
                 ))}
+                {/*users.every(item => item.step === 3) && <h2>You Won!</h2>*/}
             </div>
+
         </div>
     );
 }
